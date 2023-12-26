@@ -14,11 +14,15 @@
 
         body {
             background-color: whitesmoke;
+            font-family: 'Black Han Sans', sans-serif;
+            border: 5px solid black;
+            border-radius: 5px;
+            margin: 60px 60px 150px 60px;
         }
 
         span {
             color: red;
-            font-size: 30px;
+            font-size: 40px;
         }
 
         .main_title {
@@ -82,6 +86,16 @@
             background-color: transparent;
             border: none white;
         }
+
+        .bottom_team_name {
+            font-size: 60px;
+            text-align: center;
+        }
+
+        .bottom_img {
+            width: 400px;
+            height: 200px;
+        }
     </style>
 
     <script>
@@ -116,11 +130,11 @@
 
 <body>
     <div style="text-align: center; padding: 200px 0px 100px 0;">
-        <h1 class="main_title">우리는 F.I.L.O 입니다.</h1>
-        <h2>F.I.L.O<span>F</span>First<span>I</span>n <span>L</span>ast <span>O</span>ut<br></h2>
+        <h1 class="main_title">우리는 F.I.L.O 입니다.</h1><br>
+        <h2>F.I.L.O?? <span>F</span>irst <span>I</span>n <span>L</span>ast <span>O</span>ut<br></h2>
         <h2>제일 먼저 사전 캠프에 참여한 사람들이 모인 팀!(First In)<br>가장 마지막 까지 남아서 공부할 열정으로!(Last Out)
-        </h2>
-        <p>우리는 실력 좋고 함께 밥 먹고 싶은 개발자가 되고 싶은 사람들입니다.</p>
+        </h2><br>
+        <p style="font-size: 25px;">우리는 실력 좋고 함께 밥 먹고 싶은 개발자가 되고 싶은 사람들입니다.</p>
     </div>
 
 
@@ -210,7 +224,7 @@
                             <h5 class="card-title" id="name">유민식</h5>
                             <p class="card-text" id="content">성격 및 소개</p>
                             <p class="card-text" id="mbti">MBTI : ISFP</p>
-                            <p class="card-text" id="good">장점</p>
+                            <p class="card-text" id="good">장점: <div> 1. 타인 의견 수용이 빠름.<br>2. 나름 재미있는 편임.<br>3. 밥을 잘먹음.<br>4.TMI 좋아함</p></div>
                             <p class="card-text" id="blog"><a href="https://u-kun96.tistory.com/">블로그</a></p>
                         </div>
                     </div>
@@ -229,7 +243,7 @@
                 <div class="card" id="control">
                     <button onclick="openSetting()"><img src="mun.png" class="card-img-top" alt="..."></button>
                     <div class="card-body">
-                        <h5 style="text-align: center;" class="card-title">이름</h5>
+                        <h5 style="text-align: center;" class="card-title">문상웅</h5>
                     </div>
                 </div>
             </div>
@@ -237,7 +251,7 @@
                 <div class="card" id="control1">
                     <button onclick="openSetting1()"><img src="choe.png" class="card-img-top" alt="..."></button>
                     <div class="card-body">
-                        <h5 style="text-align: center;" class="card-title">이름</h5>
+                        <h5 style="text-align: center;" class="card-title">최인철</h5>
                     </div>
                 </div>
             </div>
@@ -245,7 +259,7 @@
                 <div class="card" id="control2">
                     <button onclick="openSetting2()"><img src="kim.png" class="card-img-top" alt="..."></button>
                     <div class="card-body">
-                        <h5 style="text-align: center;" class="card-title">이름</h5>
+                        <h5 style="text-align: center;" class="card-title">김주희</h5>
                     </div>
                 </div>
             </div>
@@ -253,7 +267,7 @@
                 <div class="card" id="control3">
                     <button onclick="openSetting3()"><img src="park.png" class="card-img-top" alt="..."></button>
                     <div class="card-body">
-                        <h5 style="text-align: center;" class="card-title">이름</h5>
+                        <h5 style="text-align: center;" class="card-title">박영서</h5>
                     </div>
                 </div>
             </div>
@@ -261,13 +275,16 @@
                 <div class="card" id="control4">
                     <button onclick="openSetting4()"><img src="yu.png" class="card-img-top" alt="..."></button>
                     <div class="card-body">
-                        <h5 style="text-align: center;" class="card-title">이름</h5>
+                        <h5 style="text-align: center;" class="card-title">유민식</h5>
                     </div>
                 </div>
             </div>
         </div>
+       <br><br><p class="bottom_team_name">Node.js 4기 미니 프로젝트 1조 F.I.L.O</p>
+       <div>
+        <img src="sparta.png" class="bottom_img">
+       </div>
     </div>
-
 </body>
 
 </html>
