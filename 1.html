@@ -22,12 +22,19 @@
             font-family: 'Black Han Sans', sans-serif;
             border: 5px solid black;
             border-radius: 5px;
-            margin: 60px 60px 150px 60px;
+            margin: 20px 60px 150px 60px;
         }
 
-        .title_team {}
+        .title_team {
+            text-align: center;
+            margin: 30px 0 50px 0;
+        }
 
-        #title {}
+        #title {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+        }
     </style>
 
     <style>
@@ -92,8 +99,8 @@
         }
 
         #main-container {
-            display: flex-end;
             padding: 18px 80px 0 80px;
+            margin: 30px 0 0 70px;
         }
 
         .main-cont-item {
@@ -103,7 +110,7 @@
 
         #Team-img-item {
             display: inline-block;
-            width: 25%;
+            width: 50%;
         }
 
         #Team-li-item {
@@ -113,19 +120,31 @@
 
         #Team-container {
             display: inline-block;
-            display: flex;
-            justify-content: space-around;
-            padding: 30px;
-            margin: 30px 0px 0 60px;
+            padding-top: 40px;
         }
 
         .Team_items {
-            display: inline-block;
+            display: inline-block
         }
 
         #main-page {
             width: 100%;
             height: 700px;
+            display: flex;
+            justify-content: center;
+        }
+
+        #Team-li-item button {
+            border: 1px solid rgb(1, 7, 8);
+            border-radius: 5px;
+            width: 150px;
+            margin: 0px auto auto auto;
+            color: black;
+            background-color: rgb(2, 12, 16);
+            box-shadow: 2px 2px 2px rgb(0, 0, 0, 0.5);
+            color: white;
+            margin: 15px 0 15px 15px;
+            padding: 10px;
         }
     </style>
 
@@ -198,7 +217,6 @@
                     <img src="1234.png" width="100%">
                 </div>
                 <div class="Team_items" id="Team-li-item">
-                    <div>&nbsp;<img src="hh.png" width="10%"></div>
                     <div><button id="Team-Name" style="margin: 15px 0 15px 15px;">팀 이름</button>
                         <div id="Team-Name-Toggle" style="display:none; font-size: x-large; text-align: center">F.I.L.O
                         </div>
@@ -208,7 +226,7 @@
                             완성
                         </div>
                     </div>
-                    <div><button id="TeamPromise" style="margin: 15px 0 15px 15px;">팀 약속</button></div>
+                    <div><button id="TeamPromise">팀 약속</button></div>
                     <div id="TeamPromise-Toggle" style="display:none; font-size: x-large; text-align: center;">
                         <p>&nbsp;</p>
                         <p>1. 9 to 9 시간 잘 지키기</p>
