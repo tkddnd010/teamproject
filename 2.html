@@ -54,7 +54,7 @@
             display: none;
         }
 
-       /* 나머지 myname 스타일 속성은 myname과 동일한 속성이라 모두 class를 myname으로 변경하였습니다. */
+        /* 나머지 myname 스타일 속성은 myname과 동일한 속성이라 모두 class를 myname으로 변경하였습니다. */
 
         .myname>button {
             background-color: transparent;
@@ -67,8 +67,18 @@
         }
 
         .bottom_img {
-           display: flex;
-           justify-content: center;
+            display: flex;
+            justify-content: center;
+        }
+
+        #button_img {
+            display: flex;
+            justify-content: center;
+        }
+
+        #button_img {
+            display: flex;
+            justify-content: center;
         }
     </style>
 
@@ -125,7 +135,9 @@
                             <h5 class="card-title" id="name">문상웅</h5>
                             <p class="card-text" id="content" style="color: red;"> F.I.L.O 팀장님 </p>
                             <p class="card-text" id="mbti">MBTI: ISFP</p>
-                            <p class="card-text" id="good">장점:<div>1. 친해지기 쉽다. <br>2. 약속을 잘지킨다.</div></p>
+                            <p class="card-text" id="good">장점:
+                            <div>1. 친해지기 쉽다. <br>2. 약속을 잘지킨다.</div>
+                            </p>
                             <p class="card-text" id="blog"><a href="https://velog.io/@tkddnd010">블로그</a></p>
                         </div>
                     </div>
@@ -143,7 +155,9 @@
                             <h5 class="card-title" id="name">최인철</h5>
                             <p class="card-text" id="content">성격 및 소개</p>
                             <p class="card-text" id="mbti">MBTI : ENFP</p>
-                            <p class="card-text" id="good">장점:<div>1. 운동을 좋아하고 잘한다.<br>2. 친화력이 좋다.</div></p>
+                            <p class="card-text" id="good">장점:
+                            <div>1. 운동을 좋아하고 잘한다.<br>2. 친화력이 좋다.</div>
+                            </p>
                             <p class="card-text" id="blog"><a href="https://cic96.tistory.com/">블로그</a></p>
                         </div>
                     </div>
@@ -161,7 +175,9 @@
                             <h5 class="card-title" id="name">김주희</h5>
                             <p class="card-text" id="content">성격 및 소개</p>
                             <p class="card-text" id="mbti">MBTI : INFJ/P</p>
-                            <p class="card-text" id="good">장점:<div>1. 시간 약속을 잘 지킨다.<br>2. 혼자서도 잘 논다.<br>3. 긍정적이다.</div></p>
+                            <p class="card-text" id="good">장점:
+                            <div>1. 시간 약속을 잘 지킨다.<br>2. 혼자서도 잘 논다.<br>3. 긍정적이다.</div>
+                            </p>
                             <p class="card-text" id="blog"><a
                                     href="https://unravelacomplicatedproblemm.tistory.com/">블로그</a></p>
                         </div>
@@ -180,7 +196,9 @@
                             <h5 class="card-title" id="name">유민식</h5>
                             <p class="card-text" id="content">성격 및 소개</p>
                             <p class="card-text" id="mbti">MBTI : ISFP</p>
-                            <p class="card-text" id="good">장점: <div> 1. 타인 의견 수용이 빠름.<br>2. 나름 재미있는 편임.<br>3. 책임감이 강함.</p></div>
+                            <p class="card-text" id="good">장점:
+                            <div> 1. 타인 의견 수용이 빠름.<br>2. 나름 재미있는 편임.<br>3. 밥을 잘먹음.<br>4.TMI 좋아함</p>
+                            </div>
                             <p class="card-text" id="blog"><a href="https://u-kun96.tistory.com/">블로그</a></p>
                         </div>
                     </div>
@@ -228,10 +246,11 @@
                 </div>
             </div>
         </div>
-       <br><br><p class="bottom_team_name">Node.js 4기 미니 프로젝트 1조 F.I.L.O</p>
-       <div class="bottom_img">
-        <img src="sparta.png" >
-       </div>
+        <br><br>
+        <p class="bottom_team_name">Node.js 4기 미니 프로젝트 1조 F.I.L.O</p>
+        <div id="button_img">
+            <img src="sparta.png" class="bottom_img">
+        </div>
     </div>
 </body>
 
