@@ -54,33 +54,7 @@
             display: none;
         }
 
-        .myname1 {
-            width: 700px;
-            height: 300px;
-            margin: 50px auto 0px auto;
-            display: none;
-        }
-
-        .myname2 {
-            width: 700px;
-            height: 300px;
-            margin: 50px auto 0px auto;
-            display: none;
-        }
-
-        .myname3 {
-            width: 700px;
-            height: 300px;
-            margin: 50px auto 0px auto;
-            display: none;
-        }
-
-        .myname4 {
-            width: 700px;
-            height: 300px;
-            margin: 50px auto 0px auto;
-            display: none;
-        }
+       /* 나머지 myname 스타일 속성은 myname과 동일한 속성이라 모두 class를 myname으로 변경하였습니다. */
 
         .myname>button {
             background-color: transparent;
@@ -93,8 +67,8 @@
         }
 
         .bottom_img {
-            width: 400px;
-            height: 200px;
+           display: flex;
+           justify-content: center;
         }
     </style>
 
@@ -151,14 +125,14 @@
                             <h5 class="card-title" id="name">문상웅</h5>
                             <p class="card-text" id="content" style="color: red;"> F.I.L.O 팀장님 </p>
                             <p class="card-text" id="mbti">MBTI: ISFP</p>
-                            <p class="card-text" id="good">장점</p>
+                            <p class="card-text" id="good">장점:<div>1. 친해지기 쉽다. <br>2. 약속을 잘지킨다.</div></p>
                             <p class="card-text" id="blog"><a href="https://velog.io/@tkddnd010">블로그</a></p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="myname1" id="page1">
+        <div class="myname" id="page1">
             <div class="card mb-3" style="max-width: 700px; max-height: 300px;">
                 <div class="row g-0">
                     <div class="col-md-4">
@@ -176,7 +150,7 @@
                 </div>
             </div>
         </div>
-        <div class="myname2" id="page2">
+        <div class="myname" id="page2">
             <div class="card mb-3" style="max-width: 700px; max-height: 300px;">
                 <div class="row g-0">
                     <div class="col-md-4">
@@ -195,7 +169,7 @@
                 </div>
             </div>
         </div>
-        <div class="myname2" id="page3">
+        <div class="myname" id="page3">
             <div class="card mb-3" style="max-width: 700px; max-height: 300px;">
                 <div class="row g-0">
                     <div class="col-md-4">
@@ -213,7 +187,7 @@
                 </div>
             </div>
         </div>
-        <div class="myname4" id="page4">
+        <div class="myname" id="page4">
             <div class="card mb-3" style="max-width: 700px; max-height: 300px;">
                 <div class="row g-0">
                     <div class="col-md-4">
@@ -224,7 +198,7 @@
                             <h5 class="card-title" id="name">유민식</h5>
                             <p class="card-text" id="content">성격 및 소개</p>
                             <p class="card-text" id="mbti">MBTI : ISFP</p>
-                            <p class="card-text" id="good">장점: <div> 1. 타인 의견 수용이 빠름.<br>2. 나름 재미있는 편임.<br>3. TMI 좋아함.</p></div>
+                            <p class="card-text" id="good">장점: <div> 1. 타인 의견 수용이 빠름.<br>2. 나름 재미있는 편임.<br>3. 책임감이 강함.</p></div>
                             <p class="card-text" id="blog"><a href="https://u-kun96.tistory.com/">블로그</a></p>
                         </div>
                     </div>
@@ -281,8 +255,8 @@
             </div>
         </div>
        <br><br><p class="bottom_team_name">Node.js 4기 미니 프로젝트 1조 F.I.L.O</p>
-       <div>
-        <img src="sparta.png" class="bottom_img">
+       <div class="bottom_img">
+        <img src="sparta.png" >
        </div>
     </div>
 </body>
