@@ -4,74 +4,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>F.I.L.O 소개</title>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>팀 목표 약속</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
 
-        #main-body {
+        body {
+            background-color: whitesmoke;
+        }
+
+        #text-main {
             background-color: whitesmoke;
             font-family: 'Black Han Sans', sans-serif;
-            /* border: 5px solid black;
-            border-radius: 5px; */
+            border: 2px solid black;
+            border-radius: 5px;
+            margin: 20px 60px 150px 60px;
         }
 
-        span {
-            color: red;
-            font-size: 40px;
-        }
-
-        .main_title {
-            font-size: 60px;
-        }
-
-        /* 기존 sawon 이름이 unknown word로 떠서 staff로 변경 */
-        .staff {
-            margin: 100px auto 15px auto;
-            width: 1000px;
-            height: 600px;
-        }
-
-        .col {
-            width: 200px;
-            margin: auto;
-        }
-
-        .image {
-            padding: 10px;
-            margin: center;
-
-        }
-
-        .myname {
-            width: 700px;
-            height: 300px;
-            margin: 50px auto 0px auto;
-            display: none;
-        }
-
-        /* 나머지 myname 스타일 속성은 myname과 동일한 속성이라 모두 class를 myname으로 변경하였습니다. */
-
-        .myname>button {
-            background-color: transparent;
-            border: none white;
-        }
-
-        .bottom_team_name {
-            font-size: 30px;
+        .title_team {
             text-align: center;
+            margin: 40px 0 80px 0;
         }
 
-        .bottom_img {
+        #title {
+            width: 50%;
             display: flex;
             justify-content: center;
-            padding-bottom: 30px;
-            margin-bottom: 30px;
         }
+    </style>
 
+    <style>
         * {
             box-sizing: border-box;
         }
@@ -143,32 +109,178 @@
             text-align: right;
             margin: 0 3px 0 5px;
         }
+
+        #Team-img-item {
+            display: inline-block;
+            width: 50%;
+        }
+
+        #Team-li-item {
+            display: inline-block;
+            width: 45%;
+        }
+
+        #Team-container {
+            display: inline-block;
+            padding-top: 40px;
+        }
+
+        .Team_items {
+            display: inline-block
+        }
+
+        #main-page {
+            width: 100%;
+            height: 700px;
+            display: flex;
+            justify-content: center;
+            padding-top: 70px;
+        }
+
+        #Team-li-item button {
+            border: 1px solid rgb(1, 7, 8);
+            border-radius: 5px;
+            width: 150px;
+            margin: 0px auto auto auto;
+            color: black;
+            background-color: rgb(2, 12, 16);
+            box-shadow: 2px 2px 2px rgb(0, 0, 0, 0.5);
+            color: white;
+            margin: 15px 0 15px 15px;
+            padding: 10px;
+        }
+
+        #popup {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0, 7);
+            z-index: 1;
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+        }
+
+        #popup.hide {
+            display: none;
+        }
+
+        #popup .content {
+            padding: 20px;
+            background: #fff;
+            border: solid 1px;
+            border-radius: 5px;
+        }
+
+        .close {
+            width: 100px;
+            height: 60px;
+            border: none white;
+            border-radius: 5px;
+        }
+
+        .save {
+            width: 100px;
+            height: 60px;
+            border: none white;
+            border-radius: 5px;
+        }
     </style>
 
+    <!--지원 함수-->
+    <script type="module">
+        // Firebase SDK 라이브러리 가져오기
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+        import { getFirestore } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+        import { collection, addDoc } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+        import { getDocs } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+
+
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyDSArT9s9Njy6kpw7mV6RY-ANEMFEXvrtg",
+            authDomain: "filo-280db.firebaseapp.com",
+            projectId: "filo-280db",
+            storageBucket: "filo-280db.appspot.com",
+            messagingSenderId: "327065309309",
+            appId: "1:327065309309:web:bcedb7edc639fc81d42114",
+            measurementId: "G-04FX9460B6"
+        };
+
+
+        // Firebase 인스턴스 초기화
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+
+        $("#savePopup").click(async function () {
+            let name = $('#name').val();
+            let image = $('#image').val();
+
+            let doc = {
+                'name': name,
+                'image': image
+            };
+            await addDoc(collection(db, "sogae"), doc);
+            window.location.reload();
+        })
+
+        $("#showPopup").click(async function () {
+            document.querySelector('#popup').classList.remove('hide');
+        })
+
+        $("#closePopup").click(async function () {
+            document.querySelector('#popup').classList.add('hide');
+        })
+
+
+        let docs = await getDocs(collection(db, "sogae"));
+        docs.forEach((doc) => {
+            let row = doc.data();
+
+            let name = row['image'];
+            let image = row['name'];
+
+            let temp_html = `
+            <div class="col">
+                <div class="card" id="control">
+                    <button onclick="openSetting()"><img
+                            src="${image}"
+                            class="card-img-top" alt="..."></button>
+                    <div class="card-body">
+                        <h5 style="text-align: center;" class="card-title">${name}</h5>
+                    </div>
+                </div>
+            </div>`;
+            $('#card').append(temp_html);
+        });
+
+
+    </script>
+
+
+    <!---팀소개 토글-->
     <script>
-        $(document).ready(function () {
-            $('#control').click(function () {
-                $("#page").toggle();
+
+        $(function () {
+            $("#Team-Name").click(function () {
+                $("#Team-Name-Toggle").toggle();
             });
         });
+
         $(function () {
-            $('#control1').click(function () {
-                $('#page1').toggle();
+            $("#Team-Goals").click(function () {
+                $("#Team-Goals-Toggle").toggle();
             });
         });
+
         $(function () {
-            $('#control2').click(function () {
-                $('#page2').toggle();
-            });
-        });
-        $(function () {
-            $('#control3').click(function () {
-                $('#page3').toggle();
-            });
-        });
-        $(function () {
-            $('#control4').click(function () {
-                $('#page4').toggle();
+            $("#TeamPromise").click(function () {
+                $("#TeamPromise-Toggle").toggle();
             });
         });
     </script>
@@ -176,10 +288,10 @@
 </head>
 
 <body>
-    <header class="main-header" id="main-container">
+    <!-- <header class="main-header" id="main-container">
         <nav class="main-nav main-cont-item">
             <ul class="main-nav-items">
-                <li class="main-nav__item"><a href="0.html" style="color: black;">홈으로</a></li>
+                <li class="main-nav__item"><a href="#" style="color: black;">홈으로</a></li>
                 <li class="main-nav__item"><a href="#" style="color: black;"><input type="text" name="search"
                             placeholder="search..."></a>
                 </li>
@@ -187,154 +299,128 @@
                 <li class="main-nav__item"><a href="#" style="color: black;">회원가입</a></li>
             </ul>
         </nav>
-    </header>
+        <div class="button main-cont-item" id="button">
+            <p><button class="btn" id="showPopup"><b>입사 지원</b></button></p>
+        </div>
+        </div>
+    </header>-->
 
-    <main-body id="main-body">
-        <div style="text-align: center; padding: 200px 0px 50px 0;">
-            <h1 class="main_title">우리는 F.I.L.O 입니다.</h1><br>
-            <h2>F.I.L.O?? <span>F</span>irst <span>I</span>n <span>L</span>ast <span>O</span>ut<br></h2>
-            <h2>제일 먼저 사전 캠프에 참여한 사람들이 모인 팀!(First In)<br>가장 마지막 까지 남아서 공부할 열정으로!(Last Out)
-            </h2><br>
-            <p style="font-size: 25px;">우리는 실력 좋고 함께 밥 먹고 싶은 개발자가 되고 싶은 사람들입니다.</p>
+    <div id="popup" class="hide layer">
+        <div class="content">
+            <p>
+                <label for="floatingInput">이름</label>
+                <input type="name" class="form-control" id="name" placeholder="이름">
+                <label for="floatingInput">사진 URL</label>
+                <input type="name" class="form-control" id="image" placeholder="사진 URL">
+                <label for="floatingInput">성격</label>
+                <input type="name" class="form-control" placeholder="성격">
+                <label for="floatingInput">MBTI</label>
+                <input type="name" class="form-control" placeholder="MBTI">
+                <label for="floatingInput">장점</label>
+                <input type="name" class="form-control" placeholder="장점">
+                <label for="floatingInput">블로그 주소</label>
+                <input type="name" class="form-control" placeholder="블로그 주소">
+            </p>
+            <button class="save" id="savePopup">저장하기</button>
+            <button class="close" id="closePopup">닫기</button>
+        </div>
+    </div>
+
+    <body>
+        <header class="main-header" id="main-container">
+            <nav class="main-nav main-cont-item">
+                <ul class="main-nav-items">
+                    <li class="main-nav__item"><a href="0.html" style="color: black;">홈으로</a></li>
+                    <li class="main-nav__item"><a href="2.html" style="color: black;">이전페이지</a></li>
+                    <li class="main-nav__item"><a href="#" style="color: black;"><input type="text" name="search"
+                                placeholder="search..."></a>
+                    </li>
+                    <li class="main-nav__item"><a href="#" style="color: black;"> 로그인 </a></li>
+                    <li class="main-nav__item"><a href="#" style="color: black;">회원가입</a></li>
+                </ul>
+            </nav>
+            <div class="button main-cont-item" id="button">
+                <p><button class="btn" onclick="applyFunction()"><b>입사 지원</b></button></p>
+            </div>
+        </header>
+
+        <div class="title">
+            <h1 class="title_team">F.I.L.O</h1>
         </div>
 
-        <div id="bottom_img" class="bottom_img">
-            <a href="aaaaa.html"><img src="sparta.png" style="width: 300px; margin: 20px auto 20px auto;"></a>
-        </div>
-        <p class="bottom_team_name">Node.js 4기 미니 프로젝트 1조 F.I.L.O</p>
-
-        <!-- //클릭시 나오는 소개 / 블로그 하이퍼링크 완료 -->
-        <div class="소개" id="소개">
-            <div class="myname" id="page">
-                <div class="card mb-3" style="max-width: 700px;" style="max-height: 300px;">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                            <img id="image" src="mun.png" class="img-fluid rounded-start" alt="...">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title" id="name">문상웅</h5>
-                                <p class="card-text" id="content" style="color: red;"> F.I.L.O 팀장님 </p>
-                                <p class="card-text" id="mbti">MBTI: ISFP</p>
-                                <p class="card-text" id="good">장점:
-                                <div>1. 친해지기 쉽다. <br>2. 약속을 잘지킨다.</div>
-                                </p>
-                                <p class="card-text" id="blog"><a href="https://velog.io/@tkddnd010">블로그</a></p>
+        <div id="text-main">
+            <div class="title">
+                <!-- <h1 class="title_team">F.I.L.O</h1>-->
+                <!-- sogae를 Team-intro 로 바꿈 -->
+                <section id="main-page">
+                    <div>
+                        <div class="Team_items" id="Team-li-item">
+                            <div>
+                                <button id="Team-Goals" style="margin: 15px 0 15px 15px;">팀 목표</button>
+                                <div id="Team-Goals-Toggle"
+                                    style="display:none; font-size: x-large; text-align: center">첫
+                                    팀프로젝트
+                                    완성
+                                </div>
+                            </div>
+                            <div>
+                                <button id="TeamPromise">팀 약속</button>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="myname" id="page1">
-                <div class="card mb-3" style="max-width: 700px; max-height: 300px;">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                            <img id="image" src="choe.png" class="img-fluid rounded-start" alt="...">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title" id="name">최인철</h5>
-                                <p class="card-text" id="content">성격 및 소개</p>
-                                <p class="card-text" id="mbti">MBTI : ENFP</p>
-                                <p class="card-text" id="good">장점:
-                                <div>1. 운동을 좋아하고 잘한다.<br>2. 친화력이 좋다.</div>
-                                </p>
-                                <p class="card-text" id="blog"><a href="https://cic96.tistory.com/">블로그</a></p>
-                            </div>
-                        </div>
+                    <div id="TeamPromise-Toggle"
+                        style="display:none; font-size: x-large; text-align: center; margin: 50px 0px 50px 0px;">
+                        <p>1. 9 to 9 시간 잘 지키기</p>
+                        <p>2. 아침 회의 성실히 참여하기.</p>
+                        <p>3. 상호간의 질의응답 ( 다정하게 ) 대답 잘하기.</p>
+                        <p>4. 10분 휴식 (50분 부터 10분 휴식하기)</p>
+                        <p>5. 자기 작업 보여줄때 별거아니다,허접하다 등 슬픈 말 금지</p>
                     </div>
-                </div>
-            </div>
-            <div class="myname" id="page2">
-                <div class="card mb-3" style="max-width: 700px; max-height: 300px;">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                            <img id="image" src="kim.png" class="img-fluid rounded-start" alt="...">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title" id="name">김주희</h5>
-                                <p class="card-text" id="content">성격 및 소개</p>
-                                <p class="card-text" id="mbti">MBTI : INFJ/P</p>
-                                <p class="card-text" id="good">장점:
-                                <div>1. 시간 약속을 잘 지킨다.<br>2. 혼자서도 잘 논다.<br>3. 긍정적이다.</div>
-                                </p>
-                                <p class="card-text" id="blog"><a
-                                        href="https://unravelacomplicatedproblemm.tistory.com/">블로그</a></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="myname" id="page4">
-                <div class="card mb-3" style="max-width: 700px; max-height: 300px;">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                            <img id="image" src="yu.png" class="img-fluid rounded-start" alt="...">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title" id="name">유민식</h5>
-                                <p class="card-text" id="content">성격 및 소개</p>
-                                <p class="card-text" id="mbti">MBTI : ISFP</p>
-                                <p class="card-text" id="good">장점:
-                                <div>1. 타인 의견 수용이 빠름.<br>2. 나름 재미있는 편임.<br>3. 책임감이 강함.<br></div>
-                                </p>
-
-                                <p class="card-text" id="blog"><a href="https://u-kun96.tistory.com/">블로그</a></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                </section>
             </div>
         </div>
+    </body>
 
 
-
-        <!-- 토글 사원증 -->
-        <!-- "sawon"이름이 계속 unknown word로 떠서 "staff"로 바꿨습니다. -->
-        <div class="staff">
-            <div id="card" class="row row-cols-1 row-cols-md-5 g-5">
-                <div class="col">
-                    <div class="card" id="control">
-                        <button onclick="openSetting()"><img src="mun.png" class="card-img-top" alt="..."></button>
-                        <div class="card-body">
-                            <h5 style="text-align: center;" class="card-title">문상웅</h5>
+    <!-- 
+       <div id="text-main">
+        <section id="main-page">
+            <div class="Team-intro" id="Team-container">
+                <div class="Team_items" id="Team-img-item">
+                    <img src="1234.png" width="100%">
+                </div>
+                <div class="Team_items" id="Team-li-item">
+                    <div><button id="Team-Name" style="margin: 15px 0 15px 15px;">팀 이름</button>
+                        <div id="Team-Name-Toggle" style="display:none; font-size: x-large; text-align: center">F.I.L.O
                         </div>
                     </div>
-                </div>
-                <div class="col">
-                    <div class="card" id="control1">
-                        <button onclick="openSetting1()"><img src="choe.png" class="card-img-top" alt="..."></button>
-                        <div class="card-body">
-                            <h5 style="text-align: center;" class="card-title">최인철</h5>
+                    <div><button id="Team-Goals" style="margin: 15px 0 15px 15px;">팀 목표</button>
+                        <div id="Team-Goals-Toggle" style="display:none; font-size: x-large; text-align: center">첫 팀프로젝트
+                            완성
                         </div>
                     </div>
-                </div>
-                <div class="col">
-                    <div class="card" id="control2">
-                        <button onclick="openSetting2()"><img src="kim.png" class="card-img-top" alt="..."></button>
-                        <div class="card-body">
-                            <h5 style="text-align: center;" class="card-title">김주희</h5>
-                        </div>
+                    <div><button id="TeamPromise">팀 약속</button></div>
+                    <div id="TeamPromise-Toggle" style="display:none; font-size: x-large; text-align: left;">
+                        <p>&nbsp;</p>
+                        <p>1. 9 to 9 시간 잘 지키기</p>
+                        <p>2. 아침 회의 성실히 참여하기.</p>
+                        <p>3. 상호간의 질의응답 ( 다정하게 ) 대답 잘하기.</p>
+                        <p>4. 10분 휴식 (50분 부터 10분 휴식하기)</p>
+                        <p>5. 자기 작업 보여줄때 별거아니다,허접하다 등 슬픈 말 금지</p>
                     </div>
-                </div>
-                <div class="col">
-                    <div class="card" id="control4">
-                        <button onclick="openSetting4()"><img src="yu.png" class="card-img-top" alt="..."></button>
-                        <div class="card-body">
-                            <h5 style="text-align: center;" class="card-title">유민식</h5>
-                        </div>
+                    <div><a href="2.html"><button id="TeamIntrodu" style="margin: 15px 0 15px 15px;">팀 소개</button></a>
                     </div>
                 </div>
             </div>
-            <br><br>
+        </section>
+    </div>
 
-            <!--- <div id="bottom_img" class="bottom_img">
-            <a href="aaaaa.html"><img src="sparta.png" style="width: 300px; margin: 20px auto 20px auto;"></a>
-        </div> -->
+    <div class="sawon">
+        <div id="card" class="row row-cols-1 row-cols-md-5 g-5">
+
         </div>
-    </main-body>
+    </div>  -->
+
 </body>
 
 </html>

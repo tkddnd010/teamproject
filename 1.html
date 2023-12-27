@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F.I.L.O 소개</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
+
+        body {
+            background-color: whitesmoke;
+            font-family: 'Black Han Sans', sans-serif;
+        }
+
+        /* .main-body {
+            border: 5px solid black;
+            border-radius: 5px;
+        } */
+
+        span {
+            color: red;
+            font-size: 40px;
+        }
+
+        .main_title {
+            font-size: 60px;
+        }
+
+        /* 기존 sawon 이름이 unknown word로 떠서 staff로 변경 */
+        .staff {
+            margin: 100px auto 15px auto;
+            width: 1000px;
+            height: 600px;
+        }
+
+        .col {
+            width: 200px;
+            margin: auto;
+        }
+
+        .image {
+            padding: 10px;
+            margin: center;
+
+        }
+
+        .myname {
+            width: 700px;
+            height: 300px;
+            margin: 50px auto 0px auto;
+            display: none;
+        }
+
+        /* 나머지 myname 스타일 속성은 myname과 동일한 속성이라 모두 class를 myname으로 변경하였습니다. */
+
+        .myname>button {
+            background-color: transparent;
+            border: none white;
+        }
+
+        .bottom_team_name {
+            font-size: 30px;
+            text-align: center;
+        }
+
+        .bottom_img {
+            display: flex;
+            justify-content: center;
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .photo {
+            width: 140px;
+            height: 160px;
+            object-fit: contain;
+        }
+
+        body {
+            margin: 1px 5px 5px 5px;
+        }
+
+        a {
+            text-decoration-line: none
+        }
+
+        .main-header {
+            width: 100%;
+            padding: 8px 16px;
+            display: inline-block;
+        }
+
+        .main-header>div {
+            /*padding-top: 10px;
+            width: 800px;
+            margin: 0px 750px auto auto;*/
+            display: inline-block;
+            width: 0%;
+            padding: 0;
+        }
+
+        .main-nav {
+            display: inline-block;
+            text-align: right;
+            list-style: none;
+            /*width: calc(100% - 100px);*/
+            width: 85%;
+        }
+
+        .main-nav-items {
+            margin: 0;
+            padding: 0;
+            display: inline-block;
+        }
+
+        .main-nav__item {
+            display: inline-block;
+            padding: 2px;
+        }
+
+        .btn {
+            border: 1px solid rgb(1, 7, 8);
+            border-radius: 5px;
+            width: 150px;
+            margin: 0px auto auto auto;
+            color: black;
+            background-color: rgb(2, 12, 16);
+            box-shadow: 2px 2px 2px rgb(0, 0, 0, 0.5);
+            color: white;
+        }
+
+        .main-nav__item {
+            display: inline-block;
+        }
+
+        .main-cont-item {
+            text-align: right;
+            margin: 0 3px 0 5px;
+        }
+    </style>
+
+    <script>
+        $(document).ready(function () {
+            $('#control').click(function () {
+                $("#page").toggle();
+            });
+        });
+        $(function () {
+            $('#control1').click(function () {
+                $('#page1').toggle();
+            });
+        });
+        $(function () {
+            $('#control2').click(function () {
+                $('#page2').toggle();
+            });
+        });
+        $(function () {
+            $('#control3').click(function () {
+                $('#page3').toggle();
+            });
+        });
+        $(function () {
+            $('#control4').click(function () {
+                $('#page4').toggle();
+            });
+        });
+    </script>
+
+</head>
+
+<body>
+    <div>
+    <header class="main-header" id="main-container">
+        <nav class="main-nav main-cont-item">
+            <ul class="main-nav-items">
+                <li class="main-nav__item"><a href="0.html" style="color: black;">홈으로</a></li>
+                <li class="main-nav__item"><a href="#" style="color: black;"><input type="text" name="search"
+                            placeholder="search..."></a>
+                </li>
+                <li class="main-nav__item"><a href="#" style="color: black;"> 로그인 </a></li>
+                <li class="main-nav__item"><a href="#" style="color: black;">회원가입</a></li>
+            </ul>
+        </nav>
+    </header>
+    </div>
+    
+    <div style="border: 5px solid black; border-radius: 5px;">
+        <div style="text-align: center; padding: 200px 0px 50px 0;">
+            <h1 class="main_title">우리는 F.I.L.O 입니다.</h1><br>
+            <h2>F.I.L.O?? <span>F</span>irst <span>I</span>n <span>L</span>ast <span>O</span>ut<br></h2>
+            <h2>제일 먼저 사전 캠프에 참여한 사람들이 모인 팀!(First In)<br>가장 마지막 까지 남아서 공부할 열정으로!(Last Out)
+            </h2><br>
+            <p style="font-size: 25px;">우리는 실력 좋고 함께 밥 먹고 싶은 개발자가 되고 싶은 사람들입니다.</p>
+        </div>
+
+        <div id="bottom_img" class="bottom_img">
+            <a href="aaaaa.html"><img src="sparta.png" style="width: 300px; margin: 20px auto 20px auto;"></a>
+        </div>
+        <p class="bottom_team_name">Node.js 4기 미니 프로젝트 1조 F.I.L.O</p>
+
+        <!-- //클릭시 나오는 소개 / 블로그 하이퍼링크 완료 -->
+        <div class="소개" id="소개">
+            <div class="myname" id="page">
+                <div class="card mb-3" style="max-width: 700px;" style="max-height: 300px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img id="image" src="mun.png" class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title" id="name">문상웅</h5>
+                                <p class="card-text" id="content" style="color: red;"> F.I.L.O 팀장님 </p>
+                                <p class="card-text" id="mbti">MBTI: ISFP</p>
+                                <p class="card-text" id="good">장점 및 협업 스타일:
+                                <div>1. 친해지기 쉽다. <br>2. 약속을 잘지킨다.</div>
+                                </p>
+                                <p class="card-text" id="blog"><a href="https://velog.io/@tkddnd010">블로그</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="myname" id="page1">
+                <div class="card mb-3" style="max-width: 700px; max-height: 300px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img id="image" src="choe.png" class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title" id="name">최인철</h5>
+                                <p class="card-text" id="content">성격 및 소개</p>
+                                <p class="card-text" id="mbti">MBTI : ENFP</p>
+                                <p class="card-text" id="good">장점 및 협업 스타일:
+                                <div>1. 운동을 좋아하고 잘한다.<br>2. 친화력이 좋다.</div>
+                                </p>
+                                <p class="card-text" id="blog"><a href="https://cic96.tistory.com/">블로그</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="myname" id="page2">
+                <div class="card mb-3" style="max-width: 700px; max-height: 300px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img id="image" src="kim.png" class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title" id="name">김주희</h5>
+                                <p class="card-text" id="content">성격 및 소개</p>
+                                <p class="card-text" id="mbti">MBTI : INFJ/P</p>
+                                <p class="card-text" id="good">장점 및 협업 스타일:
+                                <div>1. 시간 약속을 잘 지킨다.<br>2. 혼자서도 잘 논다.<br>3. 긍정적이다.</div>
+                                </p>
+                                <p class="card-text" id="blog"><a
+                                        href="https://unravelacomplicatedproblemm.tistory.com/">블로그</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="myname" id="page4">
+                <div class="card mb-3" style="max-width: 700px; max-height: 300px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img id="image" src="yu.png" class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title" id="name">유민식</h5>
+                                <p class="card-text" id="content">성격 및 소개</p>
+                                <p class="card-text" id="mbti">MBTI : ISFP</p>
+                                <p class="card-text" id="good">장점 및 협업 스타일:
+                                <div>1. 타인 의견 수용이 빠름.<br>2. 나름 재미있는 편임.<br>3. 책임감이 강함.<br></div>
+                                </p>
+
+                                <p class="card-text" id="blog"><a href="https://u-kun96.tistory.com/">블로그</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- 토글 사원증 -->
+        <!-- "sawon"이름이 계속 unknown word로 떠서 "staff"로 바꿨습니다. -->
+        <div class="staff">
+            <div id="card" class="row row-cols-1 row-cols-md-5 g-5">
+                <div class="col">
+                    <div class="card" id="control">
+                        <button onclick="openSetting()"><img src="mun.png" class="card-img-top" alt="..."></button>
+                        <div class="card-body">
+                            <h5 style="text-align: center;" class="card-title">문상웅</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card" id="control1">
+                        <button onclick="openSetting1()"><img src="choe.png" class="card-img-top" alt="..."></button>
+                        <div class="card-body">
+                            <h5 style="text-align: center;" class="card-title">최인철</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card" id="control2">
+                        <button onclick="openSetting2()"><img src="kim.png" class="card-img-top" alt="..."></button>
+                        <div class="card-body">
+                            <h5 style="text-align: center;" class="card-title">김주희</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card" id="control4">
+                        <button onclick="openSetting4()"><img src="yu.png" class="card-img-top" alt="..."></button>
+                        <div class="card-body">
+                            <h5 style="text-align: center;" class="card-title">유민식</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br><br>
+
+            <!--- <div id="bottom_img" class="bottom_img">
+            <a href="aaaaa.html"><img src="sparta.png" style="width: 300px; margin: 20px auto 20px auto;"></a>
+        </div> -->
+        </div>
+    </div>
+</body>
+
+</html>
