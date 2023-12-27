@@ -13,27 +13,27 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
 
+        body {
+            background-color: whitesmoke;
+        }
 
-
-        .title {
-
+        #text-main {
+            background-color: whitesmoke;
             font-family: 'Black Han Sans', sans-serif;
+            border: 5px solid black;
+            border-radius: 5px;
+            margin: 20px 60px 150px 60px;
+        }
 
+        .title_team {
+            text-align: center;
+            margin: 30px 0 50px 0;
+        }
+
+        #title {
+            width: 50%;
             display: flex;
-            flex-direction: column;
-            align-items: auto;
             justify-content: center;
-
-
-            width: 100%;
-            margin: 5px 0 50px 0;
-            padding: 50px 30px 30px 30px;
-            background-image: url('https://t1.daumcdn.net/cfile/tistory/9969F3395B9500290E');
-            background-position: center;
-            background-size: cover;
-
-            font-size: 300%;
-            color: white;
         }
     </style>
 
@@ -84,12 +84,12 @@
         }
 
         .btn {
-            border: 1px solid deepskyblue;
+            border: 1px solid rgb(1, 7, 8);
             border-radius: 5px;
             width: 150px;
             margin: 0px auto auto auto;
             color: black;
-            background-color: deepskyblue;
+            background-color: rgb(2, 12, 16);
             box-shadow: 2px 2px 2px rgb(0, 0, 0, 0.5);
             color: white;
         }
@@ -99,8 +99,8 @@
         }
 
         #main-container {
-            display: flex-end;
             padding: 18px 80px 0 80px;
+            margin: 30px 0 0 70px;
         }
 
         .main-cont-item {
@@ -110,7 +110,7 @@
 
         #Team-img-item {
             display: inline-block;
-            width: 25%;
+            width: 50%;
         }
 
         #Team-li-item {
@@ -120,19 +120,31 @@
 
         #Team-container {
             display: inline-block;
-            display: flex;
-            justify-content: space-around;
-            padding: 30px;
-            margin: 30px 0px 0 60px;
+            padding-top: 40px;
         }
 
         .Team_items {
-            display: inline-block;
+            display: inline-block
         }
 
         #main-page {
             width: 100%;
             height: 700px;
+            display: flex;
+            justify-content: center;
+        }
+
+        #Team-li-item button {
+            border: 1px solid rgb(1, 7, 8);
+            border-radius: 5px;
+            width: 150px;
+            margin: 0px auto auto auto;
+            color: black;
+            background-color: rgb(2, 12, 16);
+            box-shadow: 2px 2px 2px rgb(0, 0, 0, 0.5);
+            color: white;
+            margin: 15px 0 15px 15px;
+            padding: 10px;
         }
     </style>
 
@@ -180,53 +192,55 @@
     <header class="main-header" id="main-container">
         <nav class="main-nav main-cont-item">
             <ul class="main-nav-items">
-                <li class="main-nav__item"><a href="#">홈으로</a></li>
-                <li class="main-nav__item"><a href="#"><input type="text" name="search" placeholder="search..."></a>
+                <li class="main-nav__item"><a href="#" style="color: black;">홈으로</a></li>
+                <li class="main-nav__item"><a href="#" style="color: black;"><input type="text" name="search"
+                            placeholder="search..."></a>
                 </li>
-                <li class="main-nav__item"><a href="#"> 로그인 </a></li>
-                <li class="main-nav__item"><a href="#">회원가입</a></li>
+                <li class="main-nav__item"><a href="#" style="color: black;"> 로그인 </a></li>
+                <li class="main-nav__item"><a href="#" style="color: black;">회원가입</a></li>
             </ul>
         </nav>
         <div class="button main-cont-item" id="button">
             <p><button class="btn" onclick="applyFunction()"><b>입사 지원</b></button></p>
         </div>
     </header>
+
     <div class="title">
-        <h1 style="font-size: 200%;">F.I.L.O</h1>
+        <h1 class="title_team">F.I.L.O</h1>
     </div>
 
-
-
-
-    <!-- sogae를 Team-intro 로 바꿈 -->
-    <section id="main-page">
-        <div class="Team-intro" id="Team-container">
-            <div class="Team_items" id="Team-img-item">
-                <img src="img/1234.png" width="100%">
-            </div>
-            <div class="Team_items" id="Team-li-item">
-                <div>&nbsp;<img src="img/hh.png" width="10%"></div>
-                <div><button id="Team-Name" style="margin: 15px 0 15px 15px;">팀 이름</button>
-                    <div id="Team-Name-Toggle" style="display:none; font-size: x-large; text-align: center">F.I.L.O
+    <div id="text-main">
+        <!-- sogae를 Team-intro 로 바꿈 -->
+        <section id="main-page">
+            <div class="Team-intro" id="Team-container">
+                <div class="Team_items" id="Team-img-item">
+                    <img src="img/1234.png" width="100%">
+                </div>
+                <div class="Team_items" id="Team-li-item">
+                    <div><button id="Team-Name" style="margin: 15px 0 15px 15px;">팀 이름</button>
+                        <div id="Team-Name-Toggle" style="display:none; font-size: x-large; text-align: center">F.I.L.O
+                        </div>
+                    </div>
+                    <div><button id="Team-Goals" style="margin: 15px 0 15px 15px;">팀 목표</button>
+                        <div id="Team-Goals-Toggle" style="display:none; font-size: x-large; text-align: center">첫 팀프로젝트
+                            완성
+                        </div>
+                    </div>
+                    <div><button id="TeamPromise">팀 약속</button></div>
+                    <div id="TeamPromise-Toggle" style="display:none; font-size: x-large; text-align: center;">
+                        <p>&nbsp;</p>
+                        <p>1. 9 to 9 시간 잘 지키기</p>
+                        <p>2. 아침 회의 성실히 참여하기.</p>
+                        <p>3. 상호간의 질의응답 ( 다정하게 ) 대답 잘하기.</p>
+                        <p>4. 10분 휴식 (50분 부터 10분 휴식하기)</p>
+                        <p>5. 자기 작업 보여줄때 별거아니다,허접하다 등 슬픈 말 금지</p>
+                    </div>
+                    <div><a href="2.html"><button id="TeamIntrodu" style="margin: 15px 0 15px 15px;">팀 소개</button></a>
                     </div>
                 </div>
-                <div><button id="Team-Goals" style="margin: 15px 0 15px 15px;">팀 목표</button>
-                    <div id="Team-Goals-Toggle" style="display:none; font-size: x-large; text-align: center">첫 팀프로젝트 완성
-                    </div>
-                </div>
-                <div><button id="TeamPromise" style="margin: 15px 0 15px 15px;">팀 약속</button></div>
-                <div id="TeamPromise-Toggle" style="display:none; font-size: x-large; text-align: center;">
-                    <p>&nbsp;</p>
-                    <p>1. 9 to 9 시간 잘 지키기</p>
-                    <p>2. 아침 회의 성실히 참여하기.</p>
-                    <p>3. 상호간의 질의응답 ( 다정하게 ) 대답 잘하기.</p>
-                    <p>4. 10분 휴식 (50분 부터 10분 휴식하기)</p>
-                    <p>5. 자기 작업 보여줄때 별거아니다,허접하다 등 슬픈 말 금지</p>
-                </div>
-                <div><a href="2.html"><button id="TeamIntrodu" style="margin: 15px 0 15px 15px;">팀 소개</button></a></div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
 </body>
 
 </html>
