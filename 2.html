@@ -200,7 +200,8 @@
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
         import { getFirestore } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
         import { collection, addDoc } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
-        import { getDocs } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+        import { getDocs, query } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+        import { deleteDoc, doc } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
 
 
         // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -240,7 +241,7 @@
             document.querySelector('#popup').classList.add('hide');
         })
 
-
+        let i = 0;
         let docs = await getDocs(collection(db, "sogae"));
         docs.forEach((doc) => {
             let row = doc.data();
@@ -256,11 +257,35 @@
                             class="card-img-top" alt="..."></button>
                     <div class="card-body">
                         <h5 style="text-align: center;" class="card-title">${name}</h5>
+                        <button data-index="${i}" class="delbtn" style="margin: 15px 0 15px 15px;">삭제하기</button>
                     </div>
                 </div>
             </div>`;
+            i++;
             $('#card').append(temp_html);
         });
+
+        var userId = new Array();
+        let doci = 0;
+        const q = query(collection(db, "sogae"));
+        const querySnapshot = await getDocs(q);
+        querySnapshot.forEach((doc) => {
+            userId[doci] = doc.id;
+            doci++;
+        });
+
+        $('.delbtn').click(async function () {
+            let index = $(this).data('index');
+            console.log(index);
+            for (let j = 0; j < userId.length; j++) {
+                if (index === j) {
+                    await deleteDoc(doc(db, "sogae", userId[j]));
+                }
+            }
+
+            alert('삭제완료');
+            window.location.reload();
+        })
 
 
     </script>
