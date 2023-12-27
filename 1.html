@@ -26,8 +26,10 @@
         }
 
         .title_team {
+            font-size: 60px;
+            letter-spacing: 20px;
             text-align: center;
-            margin: 30px 0 50px 0;
+            margin: 60px 0 60px 0;
         }
 
         #title {
@@ -114,17 +116,9 @@
         }
 
         #Team-li-item {
-            display: inline-block;
-            width: 45%;
-        }
-
-        #Team-container {
-            display: inline-block;
-            padding-top: 40px;
-        }
-
-        .Team_items {
-            display: inline-block
+            width: 200px;
+            height: 300px;
+            margin: auto;
         }
 
         #main-page {
@@ -134,6 +128,17 @@
             justify-content: center;
         }
 
+        /* 버튼 전체를 <div>로 묶음 */
+        .Team_items {
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+
+            align-items: center;
+
+        }
+
+        /* 버튼 각각에 대한 style 지정 */
         #Team-li-item button {
             border: 1px solid rgb(1, 7, 8);
             border-radius: 5px;
@@ -205,42 +210,49 @@
         </div>
     </header>
 
-    <div class="title">
-        <h1 class="title_team">F.I.L.O</h1>
-    </div>
 
     <div id="text-main">
-        <!-- sogae를 Team-intro 로 바꿈 -->
-        <section id="main-page">
-            <div class="Team-intro" id="Team-container">
-                <div class="Team_items" id="Team-img-item">
-                    <img src="1234.png" width="100%">
-                </div>
-                <div class="Team_items" id="Team-li-item">
-                    <div><button id="Team-Name" style="margin: 15px 0 15px 15px;">팀 이름</button>
-                        <div id="Team-Name-Toggle" style="display:none; font-size: x-large; text-align: center">F.I.L.O
+        <div class="title">
+            <h1 class="title_team">F.I.L.O</h1>
+            <!-- sogae를 Team-intro 로 바꿈 -->
+            <section id="main-page">
+                <div>
+                    <div class="Team_items" id="Team-li-item" style="background-color: green;">
+                        <div><button id="Team-Name" style="margin: 15px 0 15px 15px;">팀 이름</button>
+                            <div id="Team-Name-Toggle" style="display:none; font-size: x-large; text-align: center">
+                                F.I.L.O
+                            </div>
+                        </div>
+
+                        <div>
+                            <button id="Team-Goals" style="margin: 15px 0 15px 15px;">팀 목표</button>
+                            <div id="Team-Goals-Toggle" style="display:none; font-size: x-large; text-align: center">첫
+                                팀프로젝트
+                                완성
+                            </div>
+                        </div>
+
+                        <div>
+                            <button id="TeamPromise">팀 약속</button>
+                        </div>
+
+
+                        <div>
+                            <a href="2.html"><button id="TeamIntrodu" style="margin: 15px 0 15px 15px;">팀
+                                    소개</button></a>
                         </div>
                     </div>
-                    <div><button id="Team-Goals" style="margin: 15px 0 15px 15px;">팀 목표</button>
-                        <div id="Team-Goals-Toggle" style="display:none; font-size: x-large; text-align: center">첫 팀프로젝트
-                            완성
-                        </div>
-                    </div>
-                    <div><button id="TeamPromise">팀 약속</button></div>
-                    <div id="TeamPromise-Toggle" style="display:none; font-size: x-large; text-align: center;">
-                        <p>&nbsp;</p>
-                        <p>1. 9 to 9 시간 잘 지키기</p>
-                        <p>2. 아침 회의 성실히 참여하기.</p>
-                        <p>3. 상호간의 질의응답 ( 다정하게 ) 대답 잘하기.</p>
-                        <p>4. 10분 휴식 (50분 부터 10분 휴식하기)</p>
-                        <p>5. 자기 작업 보여줄때 별거아니다,허접하다 등 슬픈 말 금지</p>
-                    </div>
-                    <div><a href="2.html"><button id="TeamIntrodu" style="margin: 15px 0 15px 15px;">팀 소개</button></a>
-                    </div>
                 </div>
-            </div>
-        </section>
-    </div>
+                <div id="TeamPromise-Toggle" style="display:none; font-size: x-large; text-align: center; margin: 50px 0px 50px 0px;">
+                    <p>1. 9 to 9 시간 잘 지키기</p>
+                    <p>2. 아침 회의 성실히 참여하기.</p>
+                    <p>3. 상호간의 질의응답 ( 다정하게 ) 대답 잘하기.</p>
+                    <p>4. 10분 휴식 (50분 부터 10분 휴식하기)</p>
+                    <p>5. 자기 작업 보여줄때 별거아니다,허접하다 등 슬픈 말 금지</p>
+                </div>
+
+            </section>
+
 </body>
 
 </html>
